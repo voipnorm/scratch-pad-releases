@@ -6,25 +6,17 @@ This is the public distribution repository for Scratch Pad. Application source i
 
 ## Download and install
 
-[Download the 0.1.0 release candidate](https://github.com/voipnorm/scratch-pad-releases/releases/tag/v0.1.0-rc.2).
+The `v0.1.0-rc.2` PKG installer release was withdrawn on November 2, 2026 after an installation failure. Its downloads have been removed. A replacement installer is not available yet.
 
-- Requires an Apple Silicon Mac. Intel builds are not available.
-- Targets macOS 14 or later. Automated validation ran on macOS 27.0.1; macOS 14 and other hardware validation remain pending.
-- Download `ScratchPad-0.1.0-arm64.pkg`. Quit Scratch Pad in all user sessions, open the package, and complete installation. The installer requires administrator authorization and places **Scratch Pad.app** in **Applications**; launch it there. Settings and recovery data are retained.
-- The app and installer are Developer ID signed. The installer is Apple notarized and has a stapled notarization ticket. No security settings need to be disabled.
-- Automatic updates are not yet implemented; download updates here manually.
+The [previous ZIP prerelease, v0.1.0-rc.1](https://github.com/voipnorm/scratch-pad-releases/releases/tag/v0.1.0-rc.1), remains available for testing on Apple Silicon Macs running macOS 14 or later. Quit Scratch Pad, extract the ZIP, copy **Scratch Pad.app** into **Applications**, then launch it from Applications. Avoid launching from temporary extraction locations.
 
-Optional download integrity check: download the matching `.sha256` file into the same folder and run:
-
-```sh
-shasum -a 256 -c ScratchPad-0.1.0-arm64.pkg.sha256
-```
+Automatic updates are not implemented. macOS 14 and clean-machine installation validation remain pending.
 
 ## Release candidate status
 
-This is a prerelease for testing, not a stable release. The app reports version **0.1.0**, build **16**; the distribution tag is **v0.1.0-rc.2**.
+This is a prerelease for testing, not a stable release. The app reports version **0.1.0**, build **16**; the distribution tag is **v0.1.0-rc.1**.
 
-Release Candidate 2 changes distribution from ZIP to a signed PKG installer; app version/build and editor runtime code remain unchanged. Installer structure, signatures, extracted payload, notarization, stapling and Gatekeeper checks passed.
+Release Candidate 2 was withdrawn because installation failed despite passing package structure, signature and notarization checks. Those checks did not establish successful installation.
 
 For the prior app release, unit/integration tests, sandbox checks, coverage gates, and external production UI tests passed. Measured first-party line coverage was 90.0% overall (Core 95.2%, native editor bridge 93.2%, App 83.8%). UI tests exercised editing and saving, undo/redo, search, independent split documents, crash recovery, layout restoration and Save As.
 
